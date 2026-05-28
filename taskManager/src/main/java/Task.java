@@ -1,55 +1,55 @@
 public class Task {
-    String title;
-    String user;
-    int priority;
-    boolean done;
+    private String titulo;
+    private String usuario;
+    private int prioridad;
+    private boolean hecho;
 
     public Task(String t, String u, int p) {
-        title = t;
-        user = u;
-        priority = p;
-        done = false;
+        titulo = t;
+        usuario = u;
+        prioridad = p;
+        hecho = false;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public int getPriority() {
-        return priority;
+    public int getPrioridad() {
+        return prioridad;
     }
 
-    public boolean isDone() {
-        return done;
+    public boolean getHecho() {
+        return hecho;
     }
 
-    public void setTitle(String t) {
-        title = t;
+    public void setTitulo(String t) {
+        titulo = t;
     }
 
-    public void setUser(String u) {
-        user = u;
+    public void setUsuario(String u) {
+        usuario = u;
     }
 
-    public void setPriority(int p) {
-        priority = p;
+    public void setPrioridad(int p) {
+        prioridad = p;
     }
 
-    public void setDone(boolean d) {
-        done = d;
+    public void setHecho(boolean d) {
+        hecho = d;
     }
 
     public String toString() {
         String s = "";
-        s = s + "Tarea: " + title + " | ";
-        s = s + "Usuario: " + user + " | ";
-        s = s + "Prioridad: " + priority + " | ";
+        s = s + "Tarea: " + titulo + " | ";
+        s = s + "Usuario: " + usuario + " | ";
+        s = s + "Prioridad: " + prioridad + " | ";
         s = s + "Estado: ";
-        if (done) {
+        if (hecho) {
             s = s + "HECHA";
         } else {
             s = s + "PENDIENTE";

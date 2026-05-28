@@ -7,18 +7,18 @@ public class Main {
         tm.addTask("refactorizar codigo", "ana", 3);
         tm.addTask("hacer diagrama", "marta", 2);
 
-        tm.completeTask("subir repositorio");
-        tm.changePriority("hacer memoria", 3);
+        tm.completarTask("subir repositorio");
+        tm.cambiarPrioridad("hacer memoria", 3);
 
-        tm.showAllTasks();
+        tm.listarTasks();
         System.out.println();
-        tm.showTasksByUser("ana");
+        tm.mostrarTasksByUser("ana");
         System.out.println();
 
         Report r = new Report();
         r.printReport(tm);
 
         System.out.println();
-        System.out.println("Total tareas: " + tm.getCount());
+        System.out.println("Total tareas: " + tm.getContador());
     }
 }
