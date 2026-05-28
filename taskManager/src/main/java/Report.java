@@ -2,24 +2,24 @@ public class Report {
 
     public void printReport(TaskManager tm) {
         System.out.println("----- INFORME -----");
-        System.out.println("Tareas totales: " + tm.getContador());
-        System.out.println("Tareas completadas: " + tm.getCompletedCount());
-        System.out.println("Tareas pendientes: " + tm.getPendingCount());
-        System.out.println("Prioridad alta: " + tm.getHighPriorityCount());
-        System.out.println("Prioridad media: " + tm.getMediumPriorityCount());
-        System.out.println("Prioridad baja: " + tm.getLowPriorityCount());
+        Task[] tareas = tm.getTasks();
+        System.out.println("Tareas totales: " + tareas.length);
+        System.out.println("Tareas completadas: " + tm.getCompletedContador());
+        System.out.println("Tareas pendientes: " + tm.getPendingContador());
+        System.out.println("Prioridad alta: " + tm.getHighprioridadContador());
+        System.out.println("Prioridad media: " + tm.getMediumPrioridadContador());
+        System.out.println("Prioridad baja: " + tm.getLowPrioridadContador());
 
-        if (tm.getContador() > 0) {
-            int porcentaje = (tm.getCompletedCount() * 100) / tm.getContador();
+        if (tareas.length > 0) {
+            int porcentaje = (tm.getCompletedContador() * 100) / tareas.length;
             System.out.println("Porcentaje completado: " + porcentaje + "%");
         } else {
             System.out.println("Porcentaje completado: 0%");
         }
 
-        Task[] tareas = tm.getTasks();
         System.out.println();
         System.out.println("DETALLE");
-        for (int i = 0; i < tm.getContador(); i++) {
+        for (int i = 0; i < tareas.length; i++) {
             if (tareas[i].getHecho()) {
                 System.out.println("[OK] " + tareas[i].getTitulo() + " - " + tareas[i].getUsuario());
             } else {

@@ -3,9 +3,9 @@ public class TaskManager {
     private Task[] tasks = new Task[100];
     private int contador = 0;
 
-    public void addTask(String titulo, String usuario, int prioridad) {
+    public void addTask(String titulo, String usuario, Prioridad prioridad) { 
         if (titulo != null && usuario != null && !titulo.equals("") && !usuario.equals("")) {
-            if (prioridad >= 1 && prioridad <= 3) {
+            if (prioridad != null) { 
                 Task t = new Task(titulo, usuario, prioridad);
                 tasks[contador] = t;
                 contador++;
@@ -27,10 +27,10 @@ public class TaskManager {
         }
     }
 
-    public void cambiarPrioridad(String titulo, int p) {
+    public void cambiarPrioridad(String titulo, Prioridad p) { 
         for (int i = 0; i < contador; i++) {
             if (tasks[i].getTitulo().equals(titulo)) {
-                if (p >= 1 && p <= 3) {
+                if (p != null) { 
                     tasks[i].setPrioridad(p);
                     System.out.println("Prioridad cambiada");
                 } else {
@@ -48,7 +48,7 @@ public class TaskManager {
     }
 
     public void mostrarTasksByUsuario(String usuario) {
-        System.out.println("TAREAS DE " + usuario.toUpperCase());
+        System.out.println("TAREAS DE ".concat(usuario.toUpperCase()));
         for (int i = 0; i < contador; i++) {
             if (tasks[i].getUsuario().equals(usuario)) {
                 System.out.println(tasks[i].toString());
@@ -79,7 +79,7 @@ public class TaskManager {
     public int getHighprioridadContador() {
         int x = 0;
         for (int i = 0; i < contador; i++) {
-            if (tasks[i].getPrioridad() == 3) {
+            if (tasks[i].getPrioridad() == Prioridad.HIGH) {
                 x++;
             }
         }
@@ -89,7 +89,7 @@ public class TaskManager {
     public int getMediumPrioridadContador() {
         int x = 0;
         for (int i = 0; i < contador; i++) {
-            if (tasks[i].getPrioridad() == 2) {
+            if (tasks[i].getPrioridad() == Prioridad.MEDIUM) { 
                 x++;
             }
         }
@@ -99,7 +99,7 @@ public class TaskManager {
     public int getLowPrioridadContador() {
         int x = 0;
         for (int i = 0; i < contador; i++) {
-            if (tasks[i].getPrioridad() == 1) {
+            if (tasks[i].getPrioridad() == Prioridad.LOW) { 
                 x++;
             }
         }
@@ -112,5 +112,10 @@ public class TaskManager {
 
     public Task[] getTasks() {
         return tasks;
+    }
+
+    public String getLowPriorityCount() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getLowPriorityCount'");
     }
 }
