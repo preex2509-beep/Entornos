@@ -1,10 +1,10 @@
 public class Task {
     private String titulo;
     private String usuario;
-    private int prioridad;
+    private Prioridad prioridad;
     private boolean hecho;
 
-    public Task(String t, String u, int p) {
+    public Task(String t, String u, Prioridad p) { 
         titulo = t;
         usuario = u;
         prioridad = p;
@@ -19,7 +19,7 @@ public class Task {
         return usuario;
     }
 
-    public int getPrioridad() {
+    public Prioridad getPrioridad() {
         return prioridad;
     }
 
@@ -35,7 +35,7 @@ public class Task {
         usuario = u;
     }
 
-    public void setPrioridad(int p) {
+    public void setPrioridad(Prioridad p) { // 👈 CAMBIADO: Recibe Prioridad
         prioridad = p;
     }
 
@@ -47,7 +47,7 @@ public class Task {
         String s = "";
         s = s + "Tarea: " + titulo + " | ";
         s = s + "Usuario: " + usuario + " | ";
-        s = s + "Prioridad: " + prioridad + " | ";
+        s = s + "Prioridad: " + prioridad + " | "; // 👈 Mostrará LOW, MEDIUM o HIGH
         s = s + "Estado: ";
         if (hecho) {
             s = s + "HECHA";
