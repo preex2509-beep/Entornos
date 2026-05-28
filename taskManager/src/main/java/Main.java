@@ -2,7 +2,6 @@ public class Main {
     public static void main(String[] args) {
         TaskManager tm = new TaskManager();
 
-        // 👈 CAMBIADO: Pasamos los elementos de Priority directamente
         tm.addTask("hacer memoria", "ana", Prioridad.MEDIUM);
         tm.addTask("subir repositorio", "luis", Prioridad.LOW);
         tm.addTask("refactorizar codigo", "ana", Prioridad.HIGH);
